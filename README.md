@@ -38,6 +38,18 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) and start adding your transactions.
 
+## Where to get your data
+
+Most Bitcoin apps include everything you need in their account statements — date, USD amount, and BTC received per transaction. Check your statements or transaction history in:
+
+- **Strike**
+- **River**
+- **Robinhood**
+- **Cash App**
+- **Coinbase**
+
+If your app doesn't provide the BTC amount for a transaction, you can look up the historical Bitcoin price for the date you bought and calculate it from the USD amount.
+
 ## CSV format
 
 You can bulk import transactions from a CSV file with these columns:
