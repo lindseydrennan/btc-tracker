@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bitcoin Return Tracker
 
-## Getting Started
+**See your real Bitcoin returns — not just the current price.**
 
-First, run the development server:
+Most apps show you the price of Bitcoin. None of them show you *your* actual return — because that requires calculating every purchase you've made at different prices to get your true cost basis. This does that.
+
+## Why this exists
+
+If you've been dollar-cost averaging into Bitcoin, you have no easy way to answer: **"Am I actually up or down, and by how much?"**
+
+Exchanges show individual trade history, but they don't roll it up into a single cost basis and return number. Portfolio trackers want your API keys. Nothing just lets you punch in your buys and see the math.
+
+This tracker calculates:
+- **Total cost basis** across all your purchases at different prices
+- **Weighted average price** you've paid per BTC
+- **Current value** using live Bitcoin price from CoinGecko
+- **Actual gain/loss** in dollars and percentage
+
+You can also **change the BTC price manually** to see what your portfolio would be worth at any price — useful for modeling "what if BTC hits $150k?" scenarios.
+
+## Features
+
+- Live BTC price via CoinGecko (free, no API key needed)
+- All data stored in your browser's localStorage — **nothing leaves your machine**
+- CSV import for bulk transaction entry
+- Tracks Buy, Income, Interest, and Credit Card Reward transactions separately
+- Sortable transaction table
+- Manual price override for hypothetical modeling
+
+## Getting started
 
 ```bash
+git clone https://github.com/YOUR_USERNAME/btc-tracker.git
+cd btc-tracker
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and start adding your transactions.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## CSV format
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can bulk import transactions from a CSV file with these columns:
 
-## Learn More
+```
+Date,Type,USD,BTC
+2025-01-15,Buy,500,0.00512
+2025-02-10,Buy,250,0.00261
+2025-03-01,Income,0,0.00015
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Tech stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js · React · TypeScript · Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Privacy
 
-## Deploy on Vercel
+Zero backend. Zero accounts. Zero tracking. Your transaction data lives in your browser's localStorage and never touches a server. Clone it, run it locally, own your data.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
