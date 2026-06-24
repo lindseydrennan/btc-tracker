@@ -30,7 +30,7 @@ You can also **change the BTC price manually** to see what your portfolio would 
 ## Getting started
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/btc-tracker.git
+git clone https://github.com/lindseydrennan/btc-tracker.git
 cd btc-tracker
 npm install
 npm run dev
